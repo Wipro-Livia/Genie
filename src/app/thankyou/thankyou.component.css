@@ -1,0 +1,33 @@
+
+
+.row{
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+.header{
+    background-image: linear-gradient(to left, #30cfd0 0%, #330867 100%);
+    position: relative;
+    padding: 1%;
+    padding-left: 5%;
+    color: white;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+  }
+  
+.thankyou{
+    width: 40%;
+    margin-left: 10%;
+    margin-top: 2%;
+}
+
+.search{
+    margin-top: 5%;
+    margin-left: 70%;
+}
