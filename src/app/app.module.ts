@@ -6,10 +6,14 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { TicketComponent } from './ticket/ticket.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 const appRoutes: Routes = [
+  { path : 'home', component: HomepageComponent},
   { path : 'ticket', component: TicketComponent},
-  { path : 'thankyou', component: ThankyouComponent}
+  { path : 'thankyou', component: ThankyouComponent},
+  { path : '', redirectTo: 'home', pathMatch: 'full'},
 ]
 
 @NgModule({
@@ -17,7 +21,9 @@ const appRoutes: Routes = [
     AppComponent,
     HomepageComponent,
     TicketComponent,
-    ThankyouComponent
+    ThankyouComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
