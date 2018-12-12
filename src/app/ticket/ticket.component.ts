@@ -1,5 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-ticket',
   templateUrl: './ticket.component.html',
@@ -13,8 +15,11 @@ export class TicketComponent implements OnInit {
     this.showDetails = !this.showDetails;
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
+  submitTicket(){
+    this.router.navigate(['/thankyou']);
+  }
   ngOnInit() {
   }
 
