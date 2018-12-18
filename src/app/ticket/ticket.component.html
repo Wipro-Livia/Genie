@@ -2,13 +2,13 @@
 
 <!-- Categories -->
 <div class="row">
-    <button type="submit" class="btn btn-primary category" (click)="toggleDetails()">EDI</button>
+    <button mat-raised-button color="primary" class="category" (click)="toggleDetails()">EDI</button>
 </div>
 <!-- End of Categories -->
 
 <!-- Details Form -->
 
-<div class="row">
+<!-- <div class="row">
   <form class="details" *ngIf='showDetails'>
     <div class="form-group">
       <label for="exampleUserName">ANA Name</label>
@@ -36,4 +36,38 @@
     </div>
     <button type="submit" class="btn btn-primary" (click)="submitTicket()">Submit</button>
   </form>
-</div>
+</div> -->
+
+<!-- Angular Material -->
+
+<div class="details">
+    <form  *ngIf='showDetails'>
+      <div class="form-group">
+          <mat-form-field appearance="outline">
+              <mat-label>ANA Name</mat-label>
+              <input matInput placeholder="Please enter your name">
+              <mat-hint>Full name</mat-hint>
+          </mat-form-field>
+      </div>
+      <div class="form-group">
+          <mat-form-field appearance="outline">
+              <mat-label>Email Address</mat-label>
+              <input matInput placeholder="Please enter your email address">
+              <mat-hint>test@test.com</mat-hint>
+          </mat-form-field>
+      </div>
+          <mat-radio-group>
+              <mat-radio-button value="1">Add</mat-radio-button>
+              <mat-radio-button value="2">Edit</mat-radio-button>
+              <mat-radio-button value="2">Delete</mat-radio-button>
+          </mat-radio-group>
+      <div class="form-group">
+          <mat-form-field appearance="outline">
+              <mat-label>User Email Address</mat-label>
+              <input matInput placeholder="Please enter the user's email address">
+              <mat-hint>test@test.com</mat-hint>
+          </mat-form-field>
+      </div>
+      <button mat-raised-button color="primary" class="submit" (click)="submitTicket()">Submit</button>
+    </form>
+  </div>

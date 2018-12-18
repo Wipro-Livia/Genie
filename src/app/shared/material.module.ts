@@ -5,9 +5,9 @@ import {
   MatSidenavModule,
   MatTableModule,
   MatIconModule,
+  MatRadioModule,
   MatCardModule,MatButtonModule,MatSelectModule
 } from '@angular/material';
-/* import { MatButtonModule, MatSelectModule } from '@angular/material'; */
 import { MatFormFieldModule } from '@angular/material/form-field';
 //test
 
@@ -21,7 +21,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
         MatSidenavModule,
         MatTableModule,
         MatCardModule,
-        MatIconModule
+        MatIconModule,
+        MatRadioModule
     ],
     exports: [MatButtonModule, 
       MatFormFieldModule, 
@@ -30,7 +31,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
       MatToolbarModule,
       MatSidenavModule,
       MatTableModule,
-      MatCardModule
+      MatCardModule,
+      MatRadioModule,
+      MatIconModule
     ],
   })
 

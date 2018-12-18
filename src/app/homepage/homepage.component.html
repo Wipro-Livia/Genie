@@ -1,6 +1,6 @@
 <!-- Log In Form -->
 
-<div class="row">
+<!-- <div class="row">
   <form class="login">
     <div class="form-group">
       <label for="exampleUserName">User Name</label>
@@ -12,21 +12,20 @@
     </div>
     <button type="submit" class="btn btn-primary" (click)="login()">Submit</button>
   </form>
-</div>
+</div> -->
 
 
 
 <div class="example-container">
-    
     <mat-form-field appearance="outline">
       <mat-label>User Name</mat-label>
       <input matInput placeholder="Please enter your username">
       <mat-hint>Max 10 characters</mat-hint>
     </mat-form-field>
-
     <mat-form-field appearance="outline">
-      <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
-      <!-- <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Enter your password">
       <mat-hint>Max 10 characters</mat-hint>
     </mat-form-field>
+    <button mat-raised-button color="primary" class="submit" (click)="login()">Submit</button>
   </div>
