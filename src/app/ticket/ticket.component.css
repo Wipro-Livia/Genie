@@ -5,15 +5,10 @@
 }
 
 .details{
-    width: 40%;
-    margin-left: 10%;
-    margin-top: 2%;
+   width: 100%; 
     
 }
 
-mat-form-field {
-    width: 200%;
-}
 
 .category{
     width: 10%;
