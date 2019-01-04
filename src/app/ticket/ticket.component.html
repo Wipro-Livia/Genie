@@ -41,7 +41,23 @@
 
 <!-- Angular Material -->
 <div class="container">
-    <form *ngIf='showDetails'>
+    <form [formGroup]="userForm" *ngIf='showDetails'>
+        <div class="form-group col-md-6">
+            <mat-form-field appearance="outline" class="details">
+                <mat-label>Email Address</mat-label>
+                <input matInput placeholder="Please enter your email address">
+                <mat-hint>test@test.com</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <mat-radio-group>
+                    <mat-radio-button value="1">Add</mat-radio-button>
+                    <mat-radio-button value="2">Edit</mat-radio-button>
+                    <mat-radio-button value="2">Delete</mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
         <div class="row">
             <div class="form-group col-md-6">
                 <mat-form-field appearance="outline" class="details">
@@ -49,23 +65,6 @@
                     <input matInput placeholder="Please enter your name">
                     <mat-hint>Full name</mat-hint>
                 </mat-form-field>
-            </div>
-        </div>
-        
-            <div class="form-group col-md-6">
-                <mat-form-field appearance="outline" class="details">
-                    <mat-label>Email Address</mat-label>
-                    <input matInput placeholder="Please enter your email address">
-                    <mat-hint>test@test.com</mat-hint>
-                </mat-form-field>
-            </div>
-            <div class="row">
-            <div class="form-group col-md-6">
-                <mat-radio-group>
-                    <mat-radio-button value="1">Add</mat-radio-button>
-                    <mat-radio-button value="2">Edit</mat-radio-button>
-                    <mat-radio-button value="2">Delete</mat-radio-button>
-                </mat-radio-group>
             </div>
         </div>
         <div class="row">
@@ -78,9 +77,34 @@
             </div>
         </div>
         <div class="row">
+            <div class="form-group col-md-6">
+                <button mat-raised-button color="accent" class="submit" (click)="addField()">Add more users</button>
+            </div>
+        </div>
+        <div  *ngFor="let testControl of userForm.get('test').controls; let i=index">
+            <div class="row input-group" >
                 <div class="form-group col-md-6">
-        <button mat-raised-button color="primary" class="submit" (click)="submitTicket()">Submit</button>
-    </div>
-</div>
+                    <mat-form-field appearance="outline" class="details">
+                        <mat-label>ANA Name</mat-label>
+                        <input matInput [formControlName]="i" placeholder="Please enter your name">
+                        <mat-hint>Full name</mat-hint>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row input-group" >
+                <div class="form-group col-md-6">
+                    <mat-form-field appearance="outline" class="details">
+                        <mat-label>User Email Address</mat-label>
+                        <input matInput [formControlName]="i" placeholder="Please enter the user's email address">
+                        <mat-hint>test@test.com</mat-hint>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <button mat-raised-button color="primary" class="submit" (click)="submitTicket()">Submit</button>
+            </div>
+        </div>
     </form>
 </div>
