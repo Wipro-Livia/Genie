@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { FormGroup, FormArray, FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+
+import { TicketService } from '../services/ticket.service';
 
 @Component({
   selector: 'app-ticket',
@@ -18,7 +21,9 @@ export class TicketComponent implements OnInit {
 
   userForm: FormGroup
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private ticketService: TicketService,
+    private _http: HttpClient) { }
 
   submitTicket(){
     this.router.navigate(['/thankyou']);

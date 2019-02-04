@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes} from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -17,7 +18,7 @@ const appRoutes: Routes = [
   { path : 'ticket', component: TicketComponent},
   { path : 'thankyou', component: ThankyouComponent},
   { path : '', redirectTo: 'home', pathMatch: 'full'},
-]
+];
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
