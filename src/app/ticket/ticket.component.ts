@@ -14,18 +14,20 @@ import { TicketService } from '../services/ticket.service';
 export class TicketComponent implements OnInit {
 
   showDetails: boolean = false;
+  fullResults: any[];
+  ticketString = '';
 
-  toggleDetails(): void{
+  toggleDetails(): void {
     this.showDetails = !this.showDetails;
   }
 
-  userForm: FormGroup
+  userForm: FormGroup;
 
   constructor(private router: Router,
     private ticketService: TicketService,
     private _http: HttpClient) { }
 
-  submitTicket(){
+  submitTicket() {
     this.router.navigate(['/thankyou']);
   }
 
@@ -39,11 +41,17 @@ export class TicketComponent implements OnInit {
       }),
       useremail: new FormControl (''),
       test: new FormArray ([])
-    })
+    });
   }
 
-  addField(){
+  addField() {
     (<FormArray>this.userForm.get('test')).push(new FormControl(''));
   }
+
+  this.ticketService.getTicketResults(this.ticketString);
+
+  this.ticketService.ticketResult.subscribe(data => {
+    this.fullResults = data;
+  });
 
 }
